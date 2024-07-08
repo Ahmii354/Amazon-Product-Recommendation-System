@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <style>
+        body {
+            background-image: url("static/bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .recommendation-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: white;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .asin {
+            color: black;
+            font-weight: bold;
+        }
+        .rating {
+            color: black;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: white;
+            margin-bottom: 100px;
+        }
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 50px;
+            margin-left: 800px;
+        }
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Recommendations</h1></center>
+    <center><h2>User ID: {{ user_id }}</h2></center>
+    {% for recommendation in recommendations %}
+    <div class="recommendation-box">
+        <div class="asin">ASIN: {{ recommendation.asin }}</div>
+        <div class="rating">Rating: {{ recommendation.rating }}</div>
+    </div>
+    {% endfor %}
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

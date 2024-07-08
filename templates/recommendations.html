@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <style>
+        body {
+            background-image: url(static/bg1.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        body, h1, th, td {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Recommendations</h1>
+    <table>
+        <tr>
+            <th>ASIN</th>
+            <th>Rating</th>
+        </tr>
+        {% for recommendation in recommendations %}
+        <tr>
+            <td>{{ recommendation[0] }}</td>
+            <td>{{ recommendation[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
